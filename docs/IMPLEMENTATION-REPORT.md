@@ -18,7 +18,7 @@ The demo includes dashboard metrics/charts, shipment list and filters, creation 
 
 - Project: `flotraq-jnt`
 - Deployment status: blocked before deployment because `npx wrangler whoami` reported `You are not authenticated`; the standard login attempt did not establish credentials.
-- Preferred URL: `https://flotraq-jnt.devopsqag.workers.dev` remains unverified and must not be described as live.
+- Direct verification: `curl` to `https://flotraq-jnt.devopsqag.workers.dev/` returned HTTP 404 with a 17-byte response, so this URL is not live.
 
 ## E. Flotraq integration
 
