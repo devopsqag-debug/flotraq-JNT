@@ -14,8 +14,8 @@ If `whoami` reports that Wrangler is not authenticated, run `npx wrangler login`
 After deployment, verify both the response and SPA fallback:
 
 ```bash
-curl -I https://flotraq-jnt.devopsqag.workers.dev/
-curl -I https://flotraq-jnt.devopsqag.workers.dev/#shipments
+curl -I https://jnt.flotraq.com/
+curl -I https://jnt.flotraq.com/#shipments
 ```
 
 The separate portfolio compatibility URL should also return `200`:

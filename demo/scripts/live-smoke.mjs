@@ -1,0 +1,11 @@
+import { chromium } from 'playwright';
+const browser = await chromium.launch({ headless: true });
+const page = await browser.newPage();
+await page.goto('https://jnt.flotraq.com/#dashboard', { waitUntil: 'networkidle' });
+console.log('title:', await page.title());
+console.log((await page.locator('body').innerText()).slice(0, 500));
+await page.getByText('Create shipment', { exact: true }).first().click();
+await page.waitForTimeout(1000);
+console.log('url:', page.url());
+console.log((await page.locator('body').innerText()).slice(0, 700));
+await browser.close();
