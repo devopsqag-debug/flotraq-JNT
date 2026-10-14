@@ -1,0 +1,37 @@
+{
+    "name": "jtexpress/laravel-jnt-express",
+    "description": "J&T Express Malaysia integration for Laravel: consignment notes, bulk create/cancel/print, shipping rates, tracking, webhook status sync and customer notifications.",
+    "type": "library",
+    "license": "GPL-2.0-or-later",
+    "keywords": ["laravel", "jnt", "j&t express", "malaysia", "shipping", "consignment note"],
+    "require": {
+        "php": "^8.1",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "illuminate/support": "^10.0|^11.0|^12.0",
+        "illuminate/http": "^10.0|^11.0|^12.0",
+        "illuminate/database": "^10.0|^11.0|^12.0",
+        "illuminate/console": "^10.0|^11.0|^12.0",
+        "illuminate/mail": "^10.0|^11.0|^12.0",
+        "illuminate/view": "^10.0|^11.0|^12.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.0|^9.0|^10.0",
+        "phpunit/phpunit": "^10.0|^11.0"
+    },
+    "autoload": {
+        "psr-4": { "JntExpress\\": "src/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "JntExpress\\Tests\\": "tests/" }
+    },
+    "extra": {
+        "laravel": {
+            "providers": ["JntExpress\\JntExpressServiceProvider"],
+            "aliases": { "Jnt": "JntExpress\\Facades\\Jnt" }
+        }
+    },
+    "scripts": { "test": "phpunit" },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

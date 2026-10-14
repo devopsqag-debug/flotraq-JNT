@@ -1,0 +1,3 @@
+The original Laravel package under `original-package/laravel-jnt-express/` is licensed GPL-2.0-or-later as declared by its composer.json and remains subject to that license.
+
+The Flotraq demo application in `demo/` is an independent portfolio demonstration. Copyright notices and third-party package licenses remain governed by their respective package metadata.
