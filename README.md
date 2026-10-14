@@ -1,5 +1,7 @@
 # Flotraq J&T Express Shipping Management Demo
 
+Demo URL : https://jnt.flotraq.com/
+
 An interactive logistics SaaS demonstration based on the supplied Laravel J&T Express package. The demo uses React, TypeScript, Vite, Recharts, Lucide, browser localStorage, and Cloudflare Workers Static Assets.
 
 ## Features
