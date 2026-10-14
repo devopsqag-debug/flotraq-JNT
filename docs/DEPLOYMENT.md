@@ -18,4 +18,12 @@ curl -I https://flotraq-jnt.devopsqag.workers.dev/
 curl -I https://flotraq-jnt.devopsqag.workers.dev/#shipments
 ```
 
+The separate portfolio compatibility URL should also return `200`:
+
+```bash
+curl -I https://flotraq.com/freelance/jnt-demo
+```
+
+The original package ZIP at `/var/www/flotraq.com/freelance/jnt-demo/laravel-jnt-express.zip` must remain preserved.
+
 No PHP, Node runtime, database, Redis, Docker, PM2, worker, or cron process is required on the VPS. Exercise the browser workflows against the public URL after the deployment returns successfully.

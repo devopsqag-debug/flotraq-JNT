@@ -18,20 +18,21 @@ The demo includes dashboard metrics/charts, shipment list and filters, creation 
 
 - Project: `flotraq-jnt`
 - Wrangler version checked: `4.150.0`.
-- Account verification: `npx wrangler whoami` reported `You are not authenticated`; no Cloudflare token was present in the environment. `npx wrangler login` opened the OAuth flow but could not be completed unattended on the VPS.
+- Account verification: on 2026-10-14, `npx wrangler whoami` reported `You are not authenticated` in both the restricted and host shells. No token was present in the process environment; no OAuth flow was initiated and no token was printed or stored.
+- Build verification: `cd demo && npm run build` passed with Vite 6.4.4 and produced `demo/dist/index.html`, one JavaScript asset, and one CSS asset.
 - Deployment status: not executed because authentication was unavailable.
-- Direct verification: `curl` to `https://flotraq-jnt.devopsqag.workers.dev/` returned HTTP 404 with a 17-byte response, so this URL is not live.
+- Deployment and public URL verification: not executed because Wrangler authentication was unavailable. The requested Workers URL remains unverified.
 - Existing configuration: `wrangler.toml` publishes `./demo/dist`, uses Workers Static Assets, and sets `not_found_handling = "single-page-application"`.
 
 ## E. Flotraq integration
 
 - Project route: `/projects/jnt-express-shipping-demo`.
-- Public verification: `https://flotraq.com/`, `/work`, `/projects`, and `/projects/jnt-express-shipping-demo` returned HTTP 200. Their J&T demo links use `https://flotraq-jnt.devopsqag.workers.dev`.
-- Requested route `https://flotraq.com/freelance/jnt-demo` returned HTTP 404; no source for that unrelated route exists in this repository, so it was not changed.
+- Source verification: home, work, projects, and case-study templates point their J&T demo CTAs to `https://flotraq-jnt.devopsqag.workers.dev`.
+- Requested route: root cause was a missing Laravel route, not Nginx or Cloudflare caching. A compatibility route now serves the existing case-study view at `/freelance/jnt-demo`, while `/projects/jnt-express-shipping-demo` remains canonical. After rebuilding only the existing portfolio app container and clearing Laravel caches, a local HTTPS virtual-host request returned HTTP 200 with the expected title and H1. The original ZIP was preserved.
 
 ## F. Testing
 
-`npm run build` is passing. The deployed asset has not been published because Wrangler authentication is unavailable. No Playwright package or browser binary is installed on the VPS, so dashboard/navigation, shipment creation/tracking, rate calculator, waybill, customer/report, CSV, localStorage/reset, console-error, and screenshot checks are unexecuted and must not be treated as passed.
+`npm run build` is passing. The deployed asset has not been published because Wrangler authentication is unavailable. No Playwright package or browser binary is installed on the VPS, so dashboard/navigation, shipment creation/tracking, rate calculator, waybill, customer/report, CSV, localStorage/reset, console-error, mobile, and screenshot checks are unexecuted and must not be treated as passed. The production container also omits PHPUnit dev dependencies, so the feature suite was not run.
 
 ## G. VPS resources
 
@@ -39,4 +40,4 @@ Node is used only for dependency installation/build. The deployed demo is static
 
 ## H. Final status
 
-PARTIAL: source and frontend are pushed; production build and portfolio HTTP/link checks are verified; Cloudflare deployment and browser-level acceptance remain blocked/unverified. Do not mark M1.1 COMPLETE until Wrangler authentication, deployment, live browser testing, and screenshots are completed.
+PARTIAL: production build and the local portfolio route fix are verified. Cloudflare authentication/deployment, public DNS checks, browser acceptance, screenshots, and GitHub push remain unverified or blocked. Do not mark M1.2 COMPLETE until those checks are executed successfully.

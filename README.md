@@ -20,6 +20,8 @@ Build with `npm run build`. Deploy static assets with `npx wrangler deploy` from
 
 The configured project is `flotraq-jnt`, with the preferred public URL `https://flotraq-jnt.devopsqag.workers.dev`. Before deploying, authenticate and confirm the intended account with `npx wrangler whoami`; deployment uses `wrangler.toml` and publishes `demo/dist` with SPA fallback routing. The URL is not considered live until a successful `npx wrangler deploy` and HTTP/browser acceptance check have been completed.
 
+The portfolio case study uses `/projects/jnt-express-shipping-demo`. The legacy `/freelance/jnt-demo` path is retained by the separate Flotraq Laravel application as a compatibility route; the original Laravel package ZIP remains preserved on the portfolio host.
+
 ## Boundary and disclaimer
 
 Independent demonstration project. Not affiliated with J&T Express. All shipments and rates are simulated. No real courier transactions, customer data, API credentials, backend, database, or external submission are used. Browser data persists in localStorage until cleared or reset.
