@@ -11,23 +11,24 @@ The demo includes dashboard metrics/charts, shipment list and filters, creation 
 ## C. GitHub
 
 - Repository: `https://github.com/devopsqag-debug/flotraq-JNT`
-- Branch and commit SHA: fill after verified push.
-- Push verification: fill after remote inspection.
+- Branch and commit SHA: `main`, `cb27dc3cf300d44874e92ae9e3d8d36c589b8141`.
+- Push verification: `git ls-remote origin refs/heads/main` returned the same SHA.
 
 ## D. Cloudflare
 
 - Project: `flotraq-jnt`
-- Actual URL and HTTP verification: fill after deployment and public checks.
+- Deployment status: blocked before deployment because `npx wrangler whoami` reported `You are not authenticated`; the standard login attempt did not establish credentials.
+- Preferred URL: `https://flotraq-jnt.devopsqag.workers.dev` remains unverified and must not be described as live.
 
 ## E. Flotraq integration
 
 - Project route: `/projects/jnt-express-shipping-demo`.
-- Homepage, `/work`, and `/projects` cards: fill after scoped portfolio deployment.
-- Public verification: fill after deployment.
+- Homepage, `/work`, and `/projects` cards: integrated in the existing inventory/templates without removing existing cards.
+- Public verification: `https://flotraq.com/projects/jnt-express-shipping-demo` returned HTTP 200 and rendered the J&T title/H1 after the app-only Docker Compose rebuild.
 
 ## F. Testing
 
-`npm run build` is passing. Browser acceptance, screenshots, live deployment checks, and any limitations are recorded here after execution; no unverified results are claimed.
+`npm run build` is passing. Focused Flotraq portfolio/sitemap tests pass (8 tests, 169 assertions). A browser engine/Playwright runner was not available on the VPS, so interactive browser acceptance and screenshots are unverified. Cloudflare live deployment checks are blocked by missing Wrangler authentication.
 
 ## G. VPS resources
 
@@ -35,4 +36,4 @@ Node is used only for dependency installation/build. The deployed demo is static
 
 ## H. Final status
 
-PARTIAL until GitHub push, Cloudflare deployment, Flotraq integration, and public browser verification are complete.
+PARTIAL: source and frontend are pushed; portfolio integration is live and verified; Cloudflare deployment and browser-level acceptance remain blocked/unverified.
